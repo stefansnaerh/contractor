@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@layer base {
+  html,
+  body {
+    @apply max-w-full
+    p-0
+    m-0
+    bg-cover;
+  }
+
+  html {
+    @apply min-w-[280px]
+    overflow-x-hidden;
+    font-size: 62.5%;
+  }
+  body {
+    @apply text-paragraph
+    bg-white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  main {
+    @apply min-h-screen;
+  }
+
+  input {
+    @apply bg-white
+    border-[1px]
+    px-6
+    md:p-8
+    font-poppins
+    h-[36px]
+    rounded-6;
+  }
+  textarea {
+    @apply bg-white
+      border-[1px]
+      p-6
+      resize-none
+      font-poppins
+      h-[120px]
+      rounded-6
+      md:p-8
+      w-fill;
+  }
+
+  img {
+    @apply block
+    max-w-full;
+  }
+
+  /* Font sizes */
+
+  p {
+    @apply text-paragraph
+    font-regular;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-semiLight;
+  }
+}
+
+@layer utilities {
+  .scrollFreeze {
+    overflow: hidden;
+    width: 100vw;
+  }
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .noScrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .noScrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}

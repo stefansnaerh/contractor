@@ -1,0 +1,56 @@
+{
+  "id": "header",
+  "label": "Header",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "first_link_text": {
+        "type": "Text",
+        "config": { "label": "First link text", "placeholder": "" }
+      },
+      "first_link": {
+        "type": "Link",
+        "config": {
+          "label": "First link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "second_link_name": {
+        "type": "Text",
+        "config": { "label": "Second link name", "placeholder": "" }
+      },
+      "second_link": {
+        "type": "Link",
+        "config": { "label": "Second link", "placeholder": "", "select": null }
+      },
+      "uid": {
+        "type": "UID",
+        "config": { "label": "Scroll to section id", "placeholder": "" }
+      },
+      "scroll_to_section_text": {
+        "type": "Text",
+        "config": { "label": "Scroll to section text", "placeholder": "" }
+      },
+      "fourth_link_text": {
+        "type": "Text",
+        "config": { "label": "Fourth link text", "placeholder": "" }
+      },
+      "fourth_link": {
+        "type": "Link",
+        "config": { "label": "Fourth link", "placeholder": "", "select": null }
+      },
+      "button_text": {
+        "type": "Text",
+        "config": { "label": "Button text", "placeholder": "" }
+      },
+      "button_link": {
+        "type": "Link",
+        "config": { "label": "Button link", "placeholder": "", "select": null }
+      }
+    }
+  }
+}
