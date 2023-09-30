@@ -3,8 +3,7 @@ import { useState } from 'react'
 
 import { KeyTextField, LinkField } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
-import ChevronDown from '../../../icons/ChevronDown.svg'
-import CalendarIcon from '../../../icons/Calendar.svg'
+
 import Button from '../../Button/Button'
 import cx from 'classnames'
 
@@ -19,20 +18,10 @@ export default function MobileNav({
   buttonLink: LinkField
   buttonText: KeyTextField
 }) {
-  const [showNestedNavElements, setShowNestedNavElements] =
-    useState<boolean>(true)
-  const [currentIndex, setCurrentIndex] = useState<number>(-1)
   const [showMobileNav, setShowMobileNav] = useState<boolean>()
 
-  const showNavGroup = (i: number) => {
-    setShowNestedNavElements((prevShowNav) =>
-      currentIndex === i ? !prevShowNav : true
-    )
-    setCurrentIndex(i)
-  }
   const toggleShowNav = () => {
     setShowMobileNav((prevShowMobileNav) => !prevShowMobileNav)
-    setShowNestedNavElements(false)
   }
 
   return (
