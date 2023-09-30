@@ -5,7 +5,6 @@ import { repositoryName } from '../../prismicio'
 
 import Header from './components/Header/Header'
 
-import { FC, PropsWithChildren } from 'react'
 import { Montserrat, Lato } from '@next/font/google'
 
 const montserrat = Montserrat({
