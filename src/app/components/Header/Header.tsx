@@ -23,7 +23,7 @@ export default async function Header() {
         buttonLink={content.button_link}
         buttonText={content.button_text}
       />
-      <nav className="hidden smmd:flex gap-fluid-40 text-white xl:gap-fluid-72 pr-24 ">
+      <nav className="hidden smmd:flex gap-fluid-40  text-white xl:gap-fluid-72 pr-24 ">
         <div className="flex self-center  gap-fluid-12 lg:gap-fluid-56 ">
           <PrismicNextLink
             aria-label={`Hlekkur á ${content.first_link_text}`}
