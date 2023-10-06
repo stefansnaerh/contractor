@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type FrontPageDocumentDataSlicesSlice = never
+type FrontPageDocumentDataSlicesSlice = CompanyInfoSlice | ServiceOwerviewSlice
 
 /**
  * Content for front_page documents
@@ -234,6 +234,66 @@ export interface CompanyInfoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField
+
+  /**
+   * Paragraph field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraph: prismic.KeyTextField
+
+  /**
+   * Button text field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField
+
+  /**
+   * Button link field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+
+  /**
+   * First image field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.first_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  first_image: prismic.ImageField<never>
+
+  /**
+   * Second image field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.second_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  second_image: prismic.ImageField<never>
+
+  /**
+   * Third image field in *CompanyInfo → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company_info.primary.third_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  third_image: prismic.ImageField<never>
 }
 
 /**
@@ -266,6 +326,96 @@ export type CompanyInfoSlice = prismic.SharedSlice<
   CompanyInfoSliceVariation
 >
 
+/**
+ * Primary content in *ServiceOwerview → Primary*
+ */
+export interface ServiceOwerviewSliceDefaultPrimary {
+  /**
+   * Title field in *ServiceOwerview → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+}
+
+/**
+ * Primary content in *ServiceOwerview → Items*
+ */
+export interface ServiceOwerviewSliceDefaultItem {
+  /**
+   * Service title field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_title: prismic.KeyTextField
+
+  /**
+   * Service text field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_text: prismic.KeyTextField
+
+  /**
+   * Service link text field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_link_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_link_text: prismic.KeyTextField
+
+  /**
+   * Service link field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  service_link: prismic.LinkField
+}
+
+/**
+ * Default variation for ServiceOwerview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceOwerviewSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ServiceOwerviewSliceDefaultPrimary>,
+  Simplify<ServiceOwerviewSliceDefaultItem>
+>
+
+/**
+ * Slice variation for *ServiceOwerview*
+ */
+type ServiceOwerviewSliceVariation = ServiceOwerviewSliceDefault
+
+/**
+ * ServiceOwerview Shared Slice
+ *
+ * - **API ID**: `service_owerview`
+ * - **Description**: ServiceOwerview
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceOwerviewSlice = prismic.SharedSlice<
+  'service_owerview',
+  ServiceOwerviewSliceVariation
+>
+
 declare module '@prismicio/client' {
   interface CreateClient {
     (
@@ -284,6 +434,9 @@ declare module '@prismicio/client' {
       CompanyInfoSlice,
       CompanyInfoSliceVariation,
       CompanyInfoSliceDefault,
+      ServiceOwerviewSlice,
+      ServiceOwerviewSliceVariation,
+      ServiceOwerviewSliceDefault,
     }
   }
 }

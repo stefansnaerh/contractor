@@ -13,7 +13,7 @@ export default async function Header() {
   const content = data.data
 
   return (
-    <header className="fixed top-0  left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] z-50 font-headline  text-md font-medium text-softBlack">
+    <header className="fixed top-0  left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] z-50 font-headline  text-md font-semiBold text-softBlack">
       <a aria-label="hlekkur til að fara heim á forsíðu" href="/" className="">
         <Logo className="h-[90px] xs:h-[100px] md:h-120 lg:w-[200px] w-[180px] pl-24" />
       </a>
@@ -57,7 +57,7 @@ export default async function Header() {
           type="anchor"
           ariaLabel={`Hlekkur til að fara á ${content.button_text}`}
           href={content.button_link}
-          className="bg-orange text-white  font-medium self-center hover:bg-brownHover transition-all duration-300 ease-in-out"
+          className="bg-orange hover:bg-orangeHover text-white  font-medium self-center hover:bg-brownHover transition-all duration-300 ease-in-out"
         />
       </nav>
     </header>

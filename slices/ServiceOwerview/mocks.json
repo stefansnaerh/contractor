@@ -1,0 +1,54 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "sun",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "silk",
+							"type": "Text"
+						}
+					],
+					[
+						"service_text",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "thank",
+							"type": "Text"
+						}
+					],
+					[
+						"service_link_text",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "happened",
+							"type": "Text"
+						}
+					],
+					[
+						"service_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

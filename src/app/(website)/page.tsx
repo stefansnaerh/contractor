@@ -29,20 +29,23 @@ export default async function Home() {
         <div className="relative z-0 lg:pb-[60%] xxs:pb-[150%] md:pb-[70%] xl:pb-[50%]  sm:pb-[90%] pb-[165%]">
           <PrismicNextImage
             field={content.hero_image}
-            className="object-cover z-30 "
+            className="object-cover z-0 "
             imgixParams={{ fit: 'crop' }}
             priority
             fill
             sizes=""
           />
         </div>
-        <Fade className="absolute z-20 m-auto  right-[15%] text-center max-w-[240px] leading-snug top-[20%] xxs:hidden">
-          <h1 className=" text-center text-black text-h1 max-w-[240px] leading-snug ">
+        <Fade className="absolute flex flex-col gap-fluid-48 max-w-[90%] z-50 m-auto w-fit left-0 right-0 text-center  text-white font-headline  top-[24%] ">
+          <h1 className="text-center text-h4 font-semiBold  leading-snug ">
             {content.hero_headline}
           </h1>
+          <h2 className="text-h3 font-semiBold">{content.hero_sub_headline}</h2>
         </Fade>
       </div>
-      <SliceZone slices={page.data.slices} components={components} />
+      <div className="pt-fluid-96">
+        <SliceZone slices={page.data.slices} components={components} />
+      </div>
     </section>
   )
 }

@@ -1,0 +1,44 @@
+{
+  "id": "service_owerview",
+  "type": "SharedSlice",
+  "name": "ServiceOwerview",
+  "description": "ServiceOwerview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        }
+      },
+      "items": {
+        "service_title": {
+          "type": "Text",
+          "config": { "label": "Service title", "placeholder": "" }
+        },
+        "service_text": {
+          "type": "Text",
+          "config": { "label": "Service text", "placeholder": "" }
+        },
+        "service_link_text": {
+          "type": "Text",
+          "config": { "label": "Service link text", "placeholder": "" }
+        },
+        "service_link": {
+          "type": "Link",
+          "config": {
+            "label": "Service link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

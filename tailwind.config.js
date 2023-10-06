@@ -16,6 +16,7 @@ module.exports = {
       current: 'currentColor',
       backgroundGrey: '#FAFAFA',
       greyInput: '#bababa',
+      grey: '#C5C5C5',
       white: '#Fcfcfc',
       softWhite: '#FFFBF9',
       backgroundWhite: '#FFFCFA',
@@ -27,6 +28,7 @@ module.exports = {
       red: '#D03C3C',
       softRed: '#FFCCCC',
       orange: '#FF7A00',
+      orangeHover: '#FFA858',
 
       newsGradient: '#3C2314',
     },
