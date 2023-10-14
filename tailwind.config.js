@@ -29,7 +29,7 @@ module.exports = {
       softRed: '#FFCCCC',
       orange: '#FF7A00',
       orangeHover: '#FFA858',
-
+      headerBlack: '#444653',
       newsGradient: '#3C2314',
     },
     letterSpacing: {

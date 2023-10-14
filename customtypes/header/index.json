@@ -50,6 +50,14 @@
       "button_link": {
         "type": "Link",
         "config": { "label": "Button link", "placeholder": "", "select": null }
+      },
+      "background_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background image",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }
