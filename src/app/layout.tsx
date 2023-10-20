@@ -4,6 +4,7 @@ import './globals.css'
 import { repositoryName } from '../../prismicio'
 
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 import { Montserrat, Lato } from '@next/font/google'
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         <main className="flex flex-col min-h-screen bg-backgroundGrey w-full max-w-screen-xxl mx-auto">
           {children}
         </main>
+        <Footer />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>

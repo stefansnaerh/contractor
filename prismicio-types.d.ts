@@ -4,7 +4,180 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type FrontPageDocumentDataSlicesSlice = CompanyInfoSlice | ServiceOwerviewSlice
+/**
+ * Item in *Footer → Link group 1*
+ */
+export interface FooterDocumentDataLinkGroup1Item {
+  /**
+   * Link name field in *Footer → Link group 1*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_1[].link_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_name: prismic.KeyTextField
+
+  /**
+   * Link field in *Footer → Link group 1*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_1[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+}
+
+/**
+ * Item in *Footer → Link group 2*
+ */
+export interface FooterDocumentDataLinkGroup2Item {
+  /**
+   * Link name field in *Footer → Link group 2*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_2[].link_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_name: prismic.KeyTextField
+
+  /**
+   * Link field in *Footer → Link group 2*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_2[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Link group 1 title field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_1_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_group_1_title: prismic.KeyTextField
+
+  /**
+   * Link group 1 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_1[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  link_group_1: prismic.GroupField<Simplify<FooterDocumentDataLinkGroup1Item>>
+
+  /**
+   * Link group 2 title field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_2_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_group_2_title: prismic.KeyTextField
+
+  /**
+   * Link group 2 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.link_group_2[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  link_group_2: prismic.GroupField<Simplify<FooterDocumentDataLinkGroup2Item>>
+
+  /**
+   * Contact title field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.contact_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_title: prismic.KeyTextField
+
+  /**
+   * Company address field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_address: prismic.KeyTextField
+
+  /**
+   * Company phone number field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_phone_number: prismic.KeyTextField
+
+  /**
+   * Company email field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_email: prismic.KeyTextField
+
+  /**
+   * Company SSD number field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_ssd_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_ssd_number: prismic.KeyTextField
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    'footer',
+    Lang
+  >
+
+type FrontPageDocumentDataSlicesSlice =
+  | CompanyInfoSlice
+  | ServiceOwerviewSlice
+  | PastProjectsSlice
 
 /**
  * Content for front_page documents
@@ -230,7 +403,10 @@ interface HeaderDocumentData {
 export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
 
-export type AllDocumentTypes = FrontPageDocument | HeaderDocument
+export type AllDocumentTypes =
+  | FooterDocument
+  | FrontPageDocument
+  | HeaderDocument
 
 /**
  * Primary content in *CompanyInfo → Primary*
@@ -338,6 +514,116 @@ export type CompanyInfoSlice = prismic.SharedSlice<
 >
 
 /**
+ * Primary content in *PastProjects → Primary*
+ */
+export interface PastProjectsSliceDefaultPrimary {
+  /**
+   * Title field in *PastProjects → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Link field in *PastProjects → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+
+  /**
+   * Link text field in *PastProjects → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.primary.link_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_text: prismic.KeyTextField
+}
+
+/**
+ * Primary content in *PastProjects → Items*
+ */
+export interface PastProjectsSliceDefaultItem {
+  /**
+   * Adress field in *PastProjects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.items[].adress
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  adress: prismic.KeyTextField
+
+  /**
+   * image field in *PastProjects → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Link name field in *PastProjects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.items[].link_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_name: prismic.KeyTextField
+
+  /**
+   * Link field in *PastProjects → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+}
+
+/**
+ * Default variation for PastProjects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PastProjectsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<PastProjectsSliceDefaultPrimary>,
+  Simplify<PastProjectsSliceDefaultItem>
+>
+
+/**
+ * Slice variation for *PastProjects*
+ */
+type PastProjectsSliceVariation = PastProjectsSliceDefault
+
+/**
+ * PastProjects Shared Slice
+ *
+ * - **API ID**: `past_projects`
+ * - **Description**: PastProjects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PastProjectsSlice = prismic.SharedSlice<
+  'past_projects',
+  PastProjectsSliceVariation
+>
+
+/**
  * Primary content in *ServiceOwerview → Primary*
  */
 export interface ServiceOwerviewSliceDefaultPrimary {
@@ -437,6 +723,8 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
       FrontPageDocument,
       FrontPageDocumentData,
       HeaderDocument,
@@ -445,6 +733,9 @@ declare module '@prismicio/client' {
       CompanyInfoSlice,
       CompanyInfoSliceVariation,
       CompanyInfoSliceDefault,
+      PastProjectsSlice,
+      PastProjectsSliceVariation,
+      PastProjectsSliceDefault,
       ServiceOwerviewSlice,
       ServiceOwerviewSliceVariation,
       ServiceOwerviewSliceDefault,

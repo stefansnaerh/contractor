@@ -18,6 +18,7 @@ module.exports = {
       greyInput: '#bababa',
       grey: '#C5C5C5',
       white: '#Fcfcfc',
+      pureWhite: '#ffffff',
       softWhite: '#FFFBF9',
       backgroundWhite: '#FFFCFA',
       black: '#373737',

@@ -1,0 +1,48 @@
+{
+  "id": "past_projects",
+  "type": "SharedSlice",
+  "name": "PastProjects",
+  "description": "PastProjects",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": { "label": "Link", "placeholder": "", "select": null }
+        },
+        "link_text": {
+          "type": "Text",
+          "config": { "label": "Link text", "placeholder": "" }
+        }
+      },
+      "items": {
+        "adress": {
+          "type": "Text",
+          "config": { "label": "Adress", "placeholder": "" }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+        },
+        "link_name": {
+          "type": "Text",
+          "config": { "label": "Link name", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": { "label": "Link", "placeholder": "", "select": null }
+        }
+      }
+    }
+  ]
+}
