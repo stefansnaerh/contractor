@@ -4,6 +4,105 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
+type AboutCompanyDocumentDataSlicesSlice = EmployeesSlice
+
+/**
+ * Content for about_company documents
+ */
+interface AboutCompanyDocumentData {
+  /**
+   * Title field in *about_company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_company.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Paragraph field in *about_company*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_company.paragraph
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField
+
+  /**
+   * Image field in *about_company*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_company.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Slice Zone field in *about_company*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_company.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AboutCompanyDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *about_company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about_company.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *about_company*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_company.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *about_company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about_company.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * about_company document from Prismic
+ *
+ * - **API ID**: `about_company`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutCompanyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AboutCompanyDocumentData>,
+    'about_company',
+    Lang
+  >
+
 /**
  * Item in *Footer → Link group 1*
  */
@@ -394,6 +493,7 @@ export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
 
 export type AllDocumentTypes =
+  | AboutCompanyDocument
   | FooterDocument
   | FrontPageDocument
   | HeaderDocument
@@ -501,6 +601,86 @@ type CompanyInfoSliceVariation = CompanyInfoSliceDefault
 export type CompanyInfoSlice = prismic.SharedSlice<
   'company_info',
   CompanyInfoSliceVariation
+>
+
+/**
+ * Primary content in *Employees → Primary*
+ */
+export interface EmployeesSliceDefaultPrimary {
+  /**
+   * Title field in *Employees → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employees.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+}
+
+/**
+ * Primary content in *Employees → Items*
+ */
+export interface EmployeesSliceDefaultItem {
+  /**
+   * Image field in *Employees → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employees.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Name field in *Employees → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employees.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField
+
+  /**
+   * Position field in *Employees → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: employees.items[].position
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Employees Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmployeesSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<EmployeesSliceDefaultPrimary>,
+  Simplify<EmployeesSliceDefaultItem>
+>
+
+/**
+ * Slice variation for *Employees*
+ */
+type EmployeesSliceVariation = EmployeesSliceDefault
+
+/**
+ * Employees Shared Slice
+ *
+ * - **API ID**: `employees`
+ * - **Description**: Employees
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmployeesSlice = prismic.SharedSlice<
+  'employees',
+  EmployeesSliceVariation
 >
 
 /**
@@ -835,6 +1015,8 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
+      AboutCompanyDocument,
+      AboutCompanyDocumentData,
       FooterDocument,
       FooterDocumentData,
       FrontPageDocument,
@@ -845,6 +1027,9 @@ declare module '@prismicio/client' {
       CompanyInfoSlice,
       CompanyInfoSliceVariation,
       CompanyInfoSliceDefault,
+      EmployeesSlice,
+      EmployeesSliceVariation,
+      EmployeesSliceDefault,
       PastProjectsSlice,
       PastProjectsSliceVariation,
       PastProjectsSliceDefault,

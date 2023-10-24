@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 
 export const components = {
   company_info: dynamic(() => import('./CompanyInfo')),
+  employees: dynamic(() => import('./Employees')),
   past_projects: dynamic(() => import('./PastProjects')),
   service_owerview: dynamic(() => import('./ServiceOwerview')),
   why_us: dynamic(() => import('./WhyUs')),

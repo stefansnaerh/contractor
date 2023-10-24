@@ -19,6 +19,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'front_page',
     path: '/',
   },
+  {
+    type: 'about_company',
+    path: '/about_company',
+  },
 ]
 
 /**
