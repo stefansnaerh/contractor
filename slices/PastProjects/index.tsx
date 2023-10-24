@@ -53,14 +53,14 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
                   </div>
                 </div>
                 <div className="flex flex-row justify-between px-fluid-18">
-                  <h3 className="font-body font-bold text-lg ">
+                  <h3 className="font-body font-bold text-paragraph  xs:text-lg ">
                     {item.adress}
                   </h3>
-                  <div className="flex gap-8 justify-center">
-                    <p className="font-body font-bold text-lg p-0 self-center ">
+                  <div className="flex xs:gap-8 gap-6 justify-center">
+                    <p className="font-body font-bold text-paragraph xs:text-lg p-0 self-center ">
                       {item.link_name}
                     </p>
-                    <ArrowRight className="h-20 w-[36px] self-center transition-all duration-300 group-hover:pl-16 " />
+                    <ArrowRight className="xs:h-20 h-[14px]  w-[28px] xs:w-[36px] self-center transition-all duration-300 group-hover:pl-16 " />
                   </div>
                 </div>
               </PrismicNextLink>

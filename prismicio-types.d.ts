@@ -103,17 +103,6 @@ interface FooterDocumentData {
   link_group_2: prismic.GroupField<Simplify<FooterDocumentDataLinkGroup2Item>>
 
   /**
-   * Contact title field in *Footer*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.contact_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  contact_title: prismic.KeyTextField
-
-  /**
    * Company address field in *Footer*
    *
    * - **Field Type**: Text
@@ -178,6 +167,7 @@ type FrontPageDocumentDataSlicesSlice =
   | CompanyInfoSlice
   | ServiceOwerviewSlice
   | PastProjectsSlice
+  | WhyUsSlice
 
 /**
  * Content for front_page documents
@@ -713,6 +703,128 @@ export type ServiceOwerviewSlice = prismic.SharedSlice<
   ServiceOwerviewSliceVariation
 >
 
+/**
+ * Primary content in *WhyUs → Primary*
+ */
+export interface WhyUsSliceDefaultPrimary {
+  /**
+   * Title field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Paragraph field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraph: prismic.KeyTextField
+
+  /**
+   * image field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Reason 1 field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_1: prismic.KeyTextField
+
+  /**
+   * Reason 1 subtext field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_1_subtext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_1_subtext: prismic.KeyTextField
+
+  /**
+   * Reason 2 field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_2: prismic.KeyTextField
+
+  /**
+   * Reason 2 subtext field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_2_subtext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_2_subtext: prismic.KeyTextField
+
+  /**
+   * Reason 3 field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_3: prismic.KeyTextField
+
+  /**
+   * Reason 3 subtext field in *WhyUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_us.primary.reason_3_subtext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason_3_subtext: prismic.KeyTextField
+}
+
+/**
+ * Default variation for WhyUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyUsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<WhyUsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *WhyUs*
+ */
+type WhyUsSliceVariation = WhyUsSliceDefault
+
+/**
+ * WhyUs Shared Slice
+ *
+ * - **API ID**: `why_us`
+ * - **Description**: WhyUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyUsSlice = prismic.SharedSlice<'why_us', WhyUsSliceVariation>
+
 declare module '@prismicio/client' {
   interface CreateClient {
     (
@@ -739,6 +851,9 @@ declare module '@prismicio/client' {
       ServiceOwerviewSlice,
       ServiceOwerviewSliceVariation,
       ServiceOwerviewSliceDefault,
+      WhyUsSlice,
+      WhyUsSliceVariation,
+      WhyUsSliceDefault,
     }
   }
 }

@@ -1,0 +1,55 @@
+{
+  "id": "why_us",
+  "type": "SharedSlice",
+  "name": "WhyUs",
+  "description": "WhyUs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        },
+        "paragraph": {
+          "type": "Text",
+          "config": { "label": "Paragraph", "placeholder": "" }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+        },
+        "reason_1": {
+          "type": "Text",
+          "config": { "label": "Reason 1", "placeholder": "" }
+        },
+        "reason_1_subtext": {
+          "type": "Text",
+          "config": { "label": "Reason 1 subtext", "placeholder": "" }
+        },
+        "reason_2": {
+          "type": "Text",
+          "config": { "label": "Reason 2", "placeholder": "" }
+        },
+        "reason_2_subtext": {
+          "type": "Text",
+          "config": { "label": "Reason 2 subtext", "placeholder": "" }
+        },
+        "reason_3": {
+          "type": "Text",
+          "config": { "label": "Reason 3", "placeholder": "" }
+        },
+        "reason_3_subtext": {
+          "type": "Text",
+          "config": { "label": "Reason 3 subtext", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

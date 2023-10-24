@@ -57,9 +57,10 @@ export default function HeaderClient({
     <header
       ref={headerElement}
       className={cx(
-        ' fixed top-0 z-50 bg-gradient-to-b from-pureBlack to-black left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] font-headline  text-md font-semiBold text-softBlack transition-all duration-500 ',
+        'fixed z-50 bg-gradient-to-b from-pureBlack to-black left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] font-headline  text-md font-semiBold text-softBlack transition-all duration-500 ',
         {
           ['-top-[120px]']: show,
+          ['top-0']: !show,
         }
       )}
     >

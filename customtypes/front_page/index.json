@@ -25,7 +25,8 @@
           "choices": {
             "company_info": { "type": "SharedSlice" },
             "service_owerview": { "type": "SharedSlice" },
-            "past_projects": { "type": "SharedSlice" }
+            "past_projects": { "type": "SharedSlice" },
+            "why_us": { "type": "SharedSlice" }
           }
         }
       }

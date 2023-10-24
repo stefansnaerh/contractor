@@ -46,10 +46,6 @@
           }
         }
       },
-      "contact_title": {
-        "type": "Text",
-        "config": { "label": "Contact title", "placeholder": "" }
-      },
       "company_address": {
         "type": "Text",
         "config": { "label": "Company address", "placeholder": "" }

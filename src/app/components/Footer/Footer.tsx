@@ -56,8 +56,8 @@ export default async function Footer() {
 
         <div className="flex gap-32">
           <ul
-            aria-label={`${content.contact_title}`}
-            className="flex gap-8 md:min-h-[160px] w-[130px] md:w-fit flex-col font-medium before:content-[attr(aria-label)] before:font-semiBold"
+            aria-label={`Heimilisfang og fleira`}
+            className="flex gap-8 md:min-h-[160px] w-[130px] md:w-fit flex-col font-medium "
           >
             <li>
               <a

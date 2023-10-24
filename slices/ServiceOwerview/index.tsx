@@ -53,7 +53,7 @@ const ServiceOverview = ({ slice }: ServiceOverviewProps): JSX.Element => {
                 <div className="flex w-fill justify-between">
                   <ToolsIcon className="self-end h-26 w-26" />
                   <div className="flex self-end pt-fluid-24">
-                    <p className="text-paragraph font-body font-semiBold ">
+                    <p className="text-paragraph font-body font-semiBold">
                       {item.service_link_text}
                     </p>
                     <ArrowRight className="self-center h-16 w-32 transition-all duration-300 group-hover:pl-16 " />

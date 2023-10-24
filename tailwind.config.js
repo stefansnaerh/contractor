@@ -26,6 +26,7 @@ module.exports = {
       softBlack: '#454545',
       pinkCard: '#F4EDED',
       footerBlue: '#264653',
+      reasonBlue: '#ACD8D3',
       red: '#D03C3C',
       softRed: '#FFCCCC',
       orange: '#FF7A00',
