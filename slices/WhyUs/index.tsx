@@ -46,10 +46,10 @@ const WhyUs = ({ slice }: WhyUsProps): JSX.Element => {
   return (
     <SliceContainer className="bg-white" lessPadding>
       <section className="text-black flex flex-col gap-fluid-40  md:gap-fluid-96 overflow-hidden ">
-        <Fade className="flex flex-col gap-fluid-40 md:gap-fluid-96  lg:px-[4%]">
+        <Fade className="flex flex-col gap-fluid-40 md:gap-fluid-96 lg:px-[4%]">
           {section.title && (
             <div className="  h-fit w-fit">
-              <h2 className="font-headline text-h2 font-semiBold h-fit w-fit">
+              <h2 className="font-headline text-h2 font-semiBold h-fit w-fit border-b-[3px] pb-4 border-y-orange ">
                 {section.title}
               </h2>
             </div>
@@ -75,7 +75,7 @@ const WhyUs = ({ slice }: WhyUsProps): JSX.Element => {
               </Fade>
             )}
           </div>
-          <div className="flex flex-col md:flex-row md:w-fill gap-fluid-40  w-[80%] xs:w-[70%] self-center ">
+          <div className="flex flex-col md:flex-row md:w-fill gap-fluid-40  w-[80%] xs:w-[70%] self-center pt-fluid-40 ">
             <Fade className="relative flex flex-col w-fill h-fill justify-center self-center">
               <span className="bg-reasonBlue h-[100px] pl-[10%] w-[50%] rounded-[360px] xs:h-[120px] md:h-[140px]"></span>
               <div className="absolute flex flex-col self-center ">

@@ -492,11 +492,78 @@ interface HeaderDocumentData {
 export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
 
+type PastProjectsDocumentDataSlicesSlice = PastProjectsSlice
+
+/**
+ * Content for past_projects documents
+ */
+interface PastProjectsDocumentData {
+  /**
+   * Slice Zone field in *past_projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PastProjectsDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *past_projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: past_projects.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *past_projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: past_projects.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *past_projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: past_projects.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * past_projects document from Prismic
+ *
+ * - **API ID**: `past_projects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PastProjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PastProjectsDocumentData>,
+    'past_projects',
+    Lang
+  >
+
 export type AllDocumentTypes =
   | AboutCompanyDocument
   | FooterDocument
   | FrontPageDocument
   | HeaderDocument
+  | PastProjectsDocument
 
 /**
  * Primary content in *CompanyInfo → Primary*
@@ -1023,6 +1090,8 @@ declare module '@prismicio/client' {
       FrontPageDocumentData,
       HeaderDocument,
       HeaderDocumentData,
+      PastProjectsDocument,
+      PastProjectsDocumentData,
       AllDocumentTypes,
       CompanyInfoSlice,
       CompanyInfoSliceVariation,

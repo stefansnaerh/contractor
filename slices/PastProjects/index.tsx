@@ -7,6 +7,7 @@ import { PrismicNextLink } from '@prismicio/next'
 import { PrismicNextImage } from '@prismicio/next'
 
 import ArrowRight from '../../src/app/icons/ArrowRight.svg'
+import Button from '@/src/app/components/Button/Button'
 
 /**
  * Props for `PastProjects`.
@@ -67,6 +68,15 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
             )
           })}
         </Fade>
+        {section.link_text && (
+          <Button
+            type="anchor"
+            text={section.link_text}
+            ariaLabel={`Hlekkur til að ${section.link_text}`}
+            href={section.link}
+            className="bg-orange hover:bg-orangeHover text-white self-end font-medium  hover:bg-brownHover transition-all duration-300 ease-in-out"
+          />
+        )}
       </section>
     </SliceContainer>
   )
