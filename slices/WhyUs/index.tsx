@@ -49,7 +49,7 @@ const WhyUs = ({ slice }: WhyUsProps): JSX.Element => {
         <Fade className="flex flex-col gap-fluid-40 md:gap-fluid-96 lg:px-[4%]">
           {section.title && (
             <div className="  h-fit w-fit">
-              <h2 className="font-headline text-h2 font-semiBold h-fit w-fit border-b-[3px] pb-4 border-y-orange ">
+              <h2 className="font-headline text-h5 xxs:text-h2 font-semiBold h-fit w-fit border-b-[3px] pb-4 border-y-orange ">
                 {section.title}
               </h2>
             </div>
