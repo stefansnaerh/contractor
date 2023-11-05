@@ -19,8 +19,6 @@ export type ServiceOverviewProps =
  */
 const ServiceOverview = ({ slice }: ServiceOverviewProps): JSX.Element => {
   const section = slice.primary
-  console.log(slice)
-
   if (slice.variation === 'default') {
     return (
       <SliceContainer className="bg-white" lessPadding>
@@ -88,26 +86,28 @@ const ServiceOverview = ({ slice }: ServiceOverviewProps): JSX.Element => {
                 <PrismicNextLink
                   field={item.service_link}
                   key={index}
-                  className="flex group flex-col justify-around gap-fluid-32 md:gap-fluid-40   bg-pinkCard hover:bg-orange hover:text-softWhite px-fluid-40 md:px-fluid-48 pt-fluid-40 md:pt-fluid-48 pb-fluid-32 md:pb-fluid-40 rounded-12 shadow-lg transition-all duration-300 ease-in-out sm:max-w-[45%] lg:max-w-[30%]"
+                  className=""
                 >
-                  <div className="flex justify-between">
-                    <h3 className="text-h3 font-headline font-semiBold self-center">
-                      {item.service_title}
-                    </h3>
-                  </div>
-
-                  <p className="text-md font-regular font-body ">
-                    {item.service_text}
-                  </p>
-                  <div className="flex w-fill justify-between">
-                    <ToolsIcon className="self-end h-26 w-26" />
-                    <div className="flex self-end pt-fluid-24">
-                      <p className="text-paragraph font-body font-semiBold">
-                        {item.service_link_text}
-                      </p>
-                      <ArrowRight className="self-center h-16 w-32 transition-all duration-300 group-hover:pl-16 " />
+                  <Fade className="flex group flex-col justify-around gap-fluid-32 md:gap-fluid-40  bg-pinkCard hover:bg-orange hover:text-softWhite px-fluid-40 md:px-fluid-48 pt-fluid-40 md:pt-fluid-48 pb-fluid-32 md:pb-fluid-40 rounded-12 shadow-lg transition-all duration-300 ease-in-out sm:max-w-[45%] lg:max-w-[30%]">
+                    <div className="flex justify-between">
+                      <h3 className="text-h3 font-headline font-semiBold self-center">
+                        {item.service_title}
+                      </h3>
                     </div>
-                  </div>
+
+                    <p className="text-md font-regular font-body ">
+                      {item.service_text}
+                    </p>
+                    <div className="flex w-fill justify-between">
+                      <ToolsIcon className="self-end h-26 w-26" />
+                      <div className="flex self-end pt-fluid-24">
+                        <p className="text-paragraph font-body font-semiBold">
+                          {item.service_link_text}
+                        </p>
+                        <ArrowRight className="self-center h-16 w-32 transition-all duration-300 group-hover:pl-16 " />
+                      </div>
+                    </div>
+                  </Fade>
                 </PrismicNextLink>
               )
             })}
