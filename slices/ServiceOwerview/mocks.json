@@ -7,6 +7,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "sun",
 				"type": "Text"
+			},
+			"scroll_to_section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "aboard",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -44,6 +49,58 @@
 							"value": {
 								"__TYPE__": "ExternalLink",
 								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "noSlideshow",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "dinner",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "she",
+							"type": "Text"
+						}
+					],
+					[
+						"service_text",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "club",
+							"type": "Text"
+						}
+					],
+					[
+						"service_link_text",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "purple",
+							"type": "Text"
+						}
+					],
+					[
+						"service_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
 							}
 						}
 					]

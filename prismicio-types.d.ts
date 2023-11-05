@@ -414,15 +414,26 @@ interface HeaderDocumentData {
   second_link: prismic.LinkField
 
   /**
-   * Scroll to section text field in *Header*
+   * Third link text field in *Header*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: header.scroll_to_section_text
+   * - **API ID Path**: header.third_link_text
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  scroll_to_section_text: prismic.KeyTextField
+  third_link_text: prismic.KeyTextField
+
+  /**
+   * Third link field in *Header*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.third_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  third_link: prismic.LinkField
 
   /**
    * Fourth link text field in *Header*
@@ -490,7 +501,11 @@ interface HeaderDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HeaderDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HeaderDocumentData>,
+    'header',
+    Lang
+  >
 
 type PastProjectsDocumentDataSlicesSlice = PastProjectsSlice
 
@@ -558,12 +573,190 @@ export type PastProjectsDocument<Lang extends string = string> =
     Lang
   >
 
+/**
+ * Item in *project → Images*
+ */
+export interface ProjectDocumentDataImagesItem {
+  /**
+   * Image field in *project → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+}
+
+type ProjectDocumentDataSlicesSlice = never
+
+/**
+ * Content for project documents
+ */
+interface ProjectDocumentData {
+  /**
+   * Title field in *project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Paragraph field in *project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.paragraph
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraph: prismic.KeyTextField
+
+  /**
+   * Images field in *project*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.images[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<ProjectDocumentDataImagesItem>>
+
+  /**
+   * Slice Zone field in *project*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: project.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: project.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, 'project', Lang>
+
+type ServicesDocumentDataSlicesSlice = ServiceOwerviewSlice
+
+/**
+ * Content for services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Slice Zone field in *services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ServicesDocumentData>,
+    'services',
+    Lang
+  >
+
 export type AllDocumentTypes =
   | AboutCompanyDocument
   | FooterDocument
   | FrontPageDocument
   | HeaderDocument
   | PastProjectsDocument
+  | ProjectDocument
+  | ServicesDocument
 
 /**
  * Primary content in *CompanyInfo → Primary*
@@ -865,6 +1058,16 @@ export type PastProjectsSlice = prismic.SharedSlice<
  */
 export interface ServiceOwerviewSliceDefaultPrimary {
   /**
+   * Scroll to section id field in *ServiceOwerview → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.primary.scroll_to_section_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_to_section_id: prismic.KeyTextField
+
+  /**
    * Title field in *ServiceOwerview → Primary*
    *
    * - **Field Type**: Text
@@ -934,9 +1137,84 @@ export type ServiceOwerviewSliceDefault = prismic.SharedSliceVariation<
 >
 
 /**
+ * Primary content in *ServiceOwerview → Primary*
+ */
+export interface ServiceOwerviewSliceNoSlideshowPrimary {
+  /**
+   * Title field in *ServiceOwerview → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+}
+
+/**
+ * Primary content in *ServiceOwerview → Items*
+ */
+export interface ServiceOwerviewSliceNoSlideshowItem {
+  /**
+   * Service title field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_title: prismic.KeyTextField
+
+  /**
+   * Service text field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_text: prismic.KeyTextField
+
+  /**
+   * Service link text field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_link_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_link_text: prismic.KeyTextField
+
+  /**
+   * Service link field in *ServiceOwerview → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_owerview.items[].service_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  service_link: prismic.LinkField
+}
+
+/**
+ * NoSlideshow variation for ServiceOwerview Slice
+ *
+ * - **API ID**: `noSlideshow`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceOwerviewSliceNoSlideshow = prismic.SharedSliceVariation<
+  'noSlideshow',
+  Simplify<ServiceOwerviewSliceNoSlideshowPrimary>,
+  Simplify<ServiceOwerviewSliceNoSlideshowItem>
+>
+
+/**
  * Slice variation for *ServiceOwerview*
  */
-type ServiceOwerviewSliceVariation = ServiceOwerviewSliceDefault
+type ServiceOwerviewSliceVariation =
+  | ServiceOwerviewSliceDefault
+  | ServiceOwerviewSliceNoSlideshow
 
 /**
  * ServiceOwerview Shared Slice
@@ -1092,6 +1370,10 @@ declare module '@prismicio/client' {
       HeaderDocumentData,
       PastProjectsDocument,
       PastProjectsDocumentData,
+      ProjectDocument,
+      ProjectDocumentData,
+      ServicesDocument,
+      ServicesDocumentData,
       AllDocumentTypes,
       CompanyInfoSlice,
       CompanyInfoSliceVariation,
@@ -1105,6 +1387,7 @@ declare module '@prismicio/client' {
       ServiceOwerviewSlice,
       ServiceOwerviewSliceVariation,
       ServiceOwerviewSliceDefault,
+      ServiceOwerviewSliceNoSlideshow,
       WhyUsSlice,
       WhyUsSliceVariation,
       WhyUsSliceDefault,

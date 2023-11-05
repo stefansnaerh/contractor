@@ -12,6 +12,46 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "scroll_to_section_id": {
+          "type": "Text",
+          "config": { "label": "Scroll to section id", "placeholder": "" }
+        },
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        }
+      },
+      "items": {
+        "service_title": {
+          "type": "Text",
+          "config": { "label": "Service title", "placeholder": "" }
+        },
+        "service_text": {
+          "type": "Text",
+          "config": { "label": "Service text", "placeholder": "" }
+        },
+        "service_link_text": {
+          "type": "Text",
+          "config": { "label": "Service link text", "placeholder": "" }
+        },
+        "service_link": {
+          "type": "Link",
+          "config": {
+            "label": "Service link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    },
+    {
+      "id": "noSlideshow",
+      "name": "NoSlideshow",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
         "title": {
           "type": "Text",
           "config": { "label": "Title", "placeholder": "" }

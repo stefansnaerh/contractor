@@ -2,7 +2,7 @@
 
 import { PrismicNextLink } from '@prismicio/next'
 import { HeaderDocumentData } from '@/prismicio-types'
-import { PrismicDocumentWithUID } from '@prismicio/client'
+
 import { useState, useEffect, useRef } from 'react'
 
 import cx from 'classnames'
@@ -10,13 +10,10 @@ import cx from 'classnames'
 import Logo from '../../icons/SH-verk-logo.svg'
 import Button from '../Button/Button'
 import MobileNav from './MobileNav/mobileNav'
-import ScrollToSection from '../ScrollToSection/scrollToSection'
 
 export default function HeaderClient({
-  data,
   content,
 }: {
-  data: PrismicDocumentWithUID
   content: HeaderDocumentData
 }) {
   const [show, setShow] = useState(false)
@@ -90,10 +87,17 @@ export default function HeaderClient({
             {content.second_link_name}
           </PrismicNextLink>
 
-          <ScrollToSection
+          {/* { <ScrollToSection
             sectionID={data.uid}
             buttonText={content.scroll_to_section_text}
-          />
+          />} */}
+          <PrismicNextLink
+            aria-label={`Hlekkur á ${content.third_link_text}`}
+            field={content.third_link}
+            className=" hover:bg-softWhite hover:text-black py-fluid-16 px-fluid-24 rounded-16 hover:shadow-nav transition-all duration-300 ease-in-out"
+          >
+            {content.third_link_text}
+          </PrismicNextLink>
           <PrismicNextLink
             aria-label={`Hlekkur á ${content.fourth_link_text}`}
             field={content.fourth_link}

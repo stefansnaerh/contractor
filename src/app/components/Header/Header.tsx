@@ -9,7 +9,7 @@ export default async function Header() {
   const content = data.data
   return (
     <>
-      <HeaderClient data={data} content={content} />
+      <HeaderClient content={content} />
     </>
   )
 }
