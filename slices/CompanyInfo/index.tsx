@@ -3,7 +3,7 @@ import { SliceComponentProps } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
 import SliceContainer from '../../src/app/components/SliceContainer/sliceContainer'
 import Button from '@/src/app/components/Button/Button'
-import { Fade } from '@/src/app/components/Fade/fade'
+import { FadeIn } from '@/src/app/components/Fade/fade'
 
 export type CompanyInfoProps = SliceComponentProps<Content.CompanyInfoSlice>
 
@@ -12,7 +12,7 @@ const CompanyInfo = ({ slice }: CompanyInfoProps): JSX.Element => {
   return (
     <SliceContainer className="bg-beigeLighter" lessPadding>
       <section className=" text-black flex flex-col md:flex-row gap-fluid-64 md:gap-fluid-144 ">
-        <Fade className="relative flex flex-col gap-fluid-40 md:gap-fluid-56 md:w-[40%]">
+        <FadeIn className="relative flex flex-col gap-fluid-40 md:gap-fluid-56 md:w-[40%]">
           {section.title && (
             <div className=" border-b-[3px] pb-4 border-y-orange w-fit">
               <h2 className="text-h2 font-headline font-semiBold w-fit">
@@ -35,8 +35,8 @@ const CompanyInfo = ({ slice }: CompanyInfoProps): JSX.Element => {
               className="w-fit  font-headline bg-orange text-white hover:bg-orangeHover transition-all duration-300 ease-in-out"
             ></Button>
           )}
-        </Fade>
-        <Fade className="flex noScrollbar gap-fluid-24 overflow-scroll snap-x snap-mandatory snap-always snap-center sm:overflow-hidden sm:grid sm:grid-cols-5 sm:grid-rows-2 md:w-[60%]">
+        </FadeIn>
+        <FadeIn className="flex noScrollbar gap-fluid-24 overflow-scroll snap-x snap-mandatory snap-always snap-center sm:overflow-hidden sm:grid sm:grid-cols-5 sm:grid-rows-2 md:w-[60%]">
           {section.first_image && (
             <div className="relative snap-center  min-w-[80%] overflow-hidden sm:min-w-[60%] sm:col-start-1 sm:col-end-4 sm:row-start-1 sm:row-end-3">
               <div className="relative pb-[110%] sm:pb-[122%] ">
@@ -80,7 +80,7 @@ const CompanyInfo = ({ slice }: CompanyInfoProps): JSX.Element => {
               </div>
             </div>
           )}
-        </Fade>
+        </FadeIn>
       </section>
     </SliceContainer>
   )

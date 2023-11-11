@@ -162,6 +162,12 @@ module.exports = {
       'container-88': 'clamp(3.2rem, 0.97rem + 4.195vw, 8.8rem)',
     },
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
       fontFamily: {
         poppins: ['var(--font-poppins)'],
         merriWeather: ['var(--font-merriweather)'],

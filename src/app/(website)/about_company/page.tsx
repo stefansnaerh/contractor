@@ -7,7 +7,7 @@ import { PrismicNextImage } from '@prismicio/next'
 
 import RichText from '../../components/RichText/RichText'
 
-import { Fade } from '../../components/Fade/fade'
+import { FadeIn } from '../../components/Fade/fade'
 import SliceContainer from '../../components/SliceContainer/sliceContainer'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -46,20 +46,20 @@ export default async function Apiko() {
       <SliceContainer className="relative flex flex-col smmd:flex-row  gap-fluid-40 lg:gap-fluid-122 xl:gap-fluid-144 ">
         <div className="  relative flex flex-col gap-fluid-40 lg:gap-fluid-48 smmd:w-[70%] md:w-[75%] self-start">
           {section.title && (
-            <Fade className="border-b-[3px] pb-4 border-y-orange w-fit self-start">
+            <FadeIn className="border-b-[3px] pb-4 border-y-orange w-fit self-start">
               <h1 className="text-h2 font-headline font-semiBold">
                 {section.title}
               </h1>
-            </Fade>
+            </FadeIn>
           )}
           {section.paragraph && (
-            <Fade className=" lg:w-[90%] ">
+            <FadeIn className=" lg:w-[90%] ">
               <RichText text={section.paragraph} />
-            </Fade>
+            </FadeIn>
           )}
         </div>
         {section.image && (
-          <Fade className=" flex relative overflow-hidden w-fill ">
+          <FadeIn className=" flex relative overflow-hidden w-fill ">
             <div className="relative  pb-[64%] smmd:pb-[95%] md:pb-[80%] xl:pb-[60%] w-fill">
               <PrismicNextImage
                 field={section.image}
@@ -70,7 +70,7 @@ export default async function Apiko() {
                 sizes="(max-width: 768px) 100vw"
               />
             </div>
-          </Fade>
+          </FadeIn>
         )}
       </SliceContainer>
 

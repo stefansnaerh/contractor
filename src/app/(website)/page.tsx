@@ -4,7 +4,7 @@ import { FrontPageDocument } from '../../../prismicio-types'
 import { SliceZone } from '@prismicio/react'
 import { components } from '../../../slices'
 import { PrismicNextImage } from '@prismicio/next'
-import { Fade } from '../components/Fade/fade'
+import { FadeIn } from '../components/Fade/fade'
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient()
@@ -37,12 +37,12 @@ export default async function Home() {
             sizes=""
           />
         </div>
-        <Fade className="absolute flex flex-col gap-fluid-48 max-w-[90%] z-40 m-auto w-fit left-0 right-0 text-center  text-white font-headline  top-[30%] ">
+        <FadeIn className="absolute flex flex-col gap-fluid-48 max-w-[90%] z-40 m-auto w-fit left-0 right-0 text-center  text-white font-headline  top-[30%] ">
           <h1 className="text-center text-h4 font-semiBold  leading-snug ">
             {content.hero_headline}
           </h1>
           <h2 className="text-h3 font-semiBold">{content.hero_sub_headline}</h2>
-        </Fade>
+        </FadeIn>
       </div>
       <div className="pt-fluid-96">
         <SliceZone slices={page.data.slices} components={components} />

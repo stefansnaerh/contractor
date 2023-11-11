@@ -3,7 +3,7 @@ import { createClient } from '../../../../../prismicio'
 import { ProjectDocument } from '../../../../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
 import SliceContainer from '@/src/app/components/SliceContainer/sliceContainer'
-import { Fade } from '@/src/app/components/Fade/fade'
+import { FadeIn } from '@/src/app/components/Fade/fade'
 
 type Params = { uid: string }
 
@@ -32,21 +32,21 @@ export default async function Education({ params }: { params: Params }) {
       <SliceContainer className="w-fill flex flex-col ">
         <div className="flex flex-col gap-fluid-48 xs:gap-fluid-56 lg:gap-fluid-80 w-fill self-start">
           {section.title && (
-            <Fade className="self-start">
+            <FadeIn className="self-start">
               <h1 className="text-h2 font-regular  border-b-[3px] pb-4 border-y-orange w-fit ">
                 {section.title}
               </h1>
-            </Fade>
+            </FadeIn>
           )}
           {section.paragraph && (
-            <Fade className="max-w-[900px]">
+            <FadeIn className="max-w-[900px]">
               <p>{section.paragraph}</p>
-            </Fade>
+            </FadeIn>
           )}
-          <Fade className="flex overflow-hidden flex-col w-fill gap-fluid-48 sm:gap-fluid-56  sm:flex-row sm:flex-wrap sm:justify-center">
+          <FadeIn className="flex overflow-hidden flex-col w-fill gap-fluid-48 sm:gap-fluid-56  sm:flex-row sm:flex-wrap sm:justify-center">
             {section.images?.map((item, index) => {
               return (
-                <Fade
+                <FadeIn
                   className="flex flex-col font-body align-middle content-center gap-fluid-12 sm:w-[45%] md:w-[30%] xl:w-[22%] "
                   key={index}
                 >
@@ -62,10 +62,10 @@ export default async function Education({ params }: { params: Params }) {
                       />
                     </div>
                   </div>
-                </Fade>
+                </FadeIn>
               )
             })}
-          </Fade>
+          </FadeIn>
         </div>
       </SliceContainer>
     </section>

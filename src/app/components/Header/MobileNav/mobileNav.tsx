@@ -61,18 +61,18 @@ export default function MobileNav({
 
       <nav
         className={cx(
-          ' smmd:hidden absolute z-10 flex  flex-col gap-fluid-72 bg-softWhite top-[90px] xs:top-[100px] overflow-y-auto h-fill min-h-[calc(100vh-100px)] w-fill px-fluid-40 py-fluid-56 xs:py-fluid-72 xs:px-fluid-56  transform duration-500 ease-in-out',
+          ' smmd:hidden absolute z-10 flex  flex-col gap-fluid-72 bg-gradient-to-b from-pureBlack to-black top-[90px] xs:top-[100px] overflow-y-auto h-fill min-h-[calc(100vh-100px)] w-fill px-fluid-40 py-fluid-56 xs:py-fluid-72 xs:px-fluid-56  transform duration-500 ease-in-out',
           { ['ml-fill']: !showMobileNav, ['ml-0']: showMobileNav }
         )}
       >
-        <ul className="text-[24px] flex flex-col gap-fluid-40 xs:gap-fluid-48 ">
+        <ul className="text-lg flex flex-col gap-fluid-40 xs:gap-fluid-48 ">
           <li>
             {' '}
             <PrismicNextLink
               onClick={() => setShowMobileNav(false)}
               aria-label={`Hlekkur sem fer með þig á ${firstLinkText}`}
               field={firstLink}
-              className="hover:text-pureBlack transition-all duration-75 ease-in-out "
+              className="text-white "
             >
               {firstLinkText}
             </PrismicNextLink>
@@ -83,7 +83,7 @@ export default function MobileNav({
           type="anchor"
           href={buttonLink}
           ariaLabel={`Hlekkur til að fara með þig á ${buttonText}`}
-          className="bg-brown  text-white font-medium  hover:bg-brownHover transition-all duration-300 ease-in-out"
+          className="bg-orange  text-white font-medium text-lg hover:bg-brownHover transition-all duration-300 ease-in-out"
         />
       </nav>
     </>

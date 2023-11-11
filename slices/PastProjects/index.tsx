@@ -1,7 +1,7 @@
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
-import { Fade } from '@/src/app/components/Fade/fade'
+import { FadeIn } from '@/src/app/components/Fade/fade'
 import SliceContainer from '@/src/app/components/SliceContainer/sliceContainer'
 import { PrismicNextLink } from '@prismicio/next'
 import { PrismicNextImage } from '@prismicio/next'
@@ -23,7 +23,7 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
   return (
     <SliceContainer className="bg-white" lessPadding>
       <section className="text-black flex flex-col gap-fluid-40 md:gap-fluid-96 overflow-hidden w-fill ">
-        <Fade className="flex flex-col gap-fluid-40 md:flex-row md:justify-between lg:px-[4%]">
+        <FadeIn className="flex flex-col gap-fluid-40 md:flex-row md:justify-between lg:px-[4%]">
           {section.title && (
             <div className=" border-b-[3px] pb-4 border-y-orange h-fit w-fit">
               <h2 className="font-headline text-h2 font-semiBold h-fit w-fit">
@@ -31,8 +31,8 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
               </h2>
             </div>
           )}
-        </Fade>
-        <Fade className="flex noScrollbar gap-fluid-24 sm:gap-fluid-32 lg:gap-fluid-48 overflow-scroll snap-x snap-mandatory lg:overflow-hidden lg:flex-wrap lg:justify-center">
+        </FadeIn>
+        <FadeIn className="flex noScrollbar gap-fluid-24 sm:gap-fluid-32 lg:gap-fluid-48 overflow-scroll snap-x snap-mandatory lg:overflow-hidden lg:flex-wrap lg:justify-center">
           {slice.items?.map((item, index) => {
             console.log(item)
             return (
@@ -67,7 +67,7 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
               </PrismicNextLink>
             )
           })}
-        </Fade>
+        </FadeIn>
         {section.link_text && (
           <Button
             type="anchor"

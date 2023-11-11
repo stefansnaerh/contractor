@@ -80,6 +80,7 @@
     overflow: hidden;
     width: 100vw;
   }
+
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
     .noScrollbar::-webkit-scrollbar {
