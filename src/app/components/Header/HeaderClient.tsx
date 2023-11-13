@@ -23,7 +23,7 @@ export default function HeaderClient({
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY && window.scrollY > 10) {
         // if scroll down hide the navbar
         setShow(true)
       } else {
