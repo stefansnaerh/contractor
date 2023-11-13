@@ -16,9 +16,10 @@ export default function HeaderClient({
 }: {
   content: HeaderDocumentData
 }) {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState<boolean>(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   const headerElement = useRef<HTMLHeadElement>(null)
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean | undefined>()
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -45,31 +46,21 @@ export default function HeaderClient({
     }
   }, [lastScrollY])
 
-  //fixed top-0 z-50 bg-gradient-to-b from-pureBlack to-black left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] font-headline  text-md font-semiBold text-softBlack transition-all duration-150
-  // className={`active fixed top-0 z-50 bg-gradient-to-b from-pureBlack to-black left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] font-headline  text-md font-semiBold text-softBlack  ${
-  //     show && 'hidden'
-  // }`}
-
   return (
     <header
       ref={headerElement}
       className={cx(
         'fixed z-50 bg-gradient-to-b from-pureBlack to-black left-0 right-0 justify-between flex  h-[90px] xs:h-[100px] md:h-[120px] font-headline  text-md font-semiBold text-softBlack transition-all duration-500 ',
         {
-          ['-top-[120px]']: show,
-          ['top-0']: !show,
+          ['-top-[120px]']: show && !isMobileNavOpen,
+          ['top-0']: !show && !isMobileNavOpen,
         }
       )}
     >
       <a aria-label="hlekkur til að fara heim á forsíðu" href="/" className="">
         <Logo className="h-[90px] xs:h-[100px] md:h-120 lg:w-[200px] w-[180px] pl-24" />
       </a>
-      <MobileNav
-        firstLink={content.first_link}
-        firstLinkText={content.first_link_text}
-        buttonLink={content.button_link}
-        buttonText={content.button_text}
-      />
+      <MobileNav setIsMobileNavOpen={setIsMobileNavOpen} content={content} />
       <nav className="hidden smmd:flex gap-fluid-40  text-white xl:gap-fluid-72 pr-24 ">
         <div className="flex self-center  gap-fluid-12 lg:gap-fluid-56 ">
           <PrismicNextLink
