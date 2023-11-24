@@ -34,7 +34,6 @@ const ServiceOverview = ({ slice }: ServiceOverviewProps): JSX.Element => {
           </FadeIn>
           <FadeIn className="flex noScrollbar gap-fluid-24 sm:gap-fluid-32 lg:gap-fluid-48 overflow-scroll snap-x snap-mandatory lg:overflow-hidden lg:flex-wrap lg:justify-center">
             {slice.items?.map((item, index) => {
-              console.log(item)
               return (
                 <PrismicNextLink
                   field={item.service_link}

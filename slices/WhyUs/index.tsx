@@ -11,7 +11,6 @@ export type WhyUsProps = SliceComponentProps<Content.WhyUsSlice>
  */
 const WhyUs = ({ slice }: WhyUsProps): JSX.Element => {
   const section = slice.primary
-  console.log(slice.items)
   return (
     <SliceContainer className="bg-white" lessPadding>
       <section className="text-black flex flex-col gap-fluid-40  md:gap-fluid-96 overflow-hidden ">

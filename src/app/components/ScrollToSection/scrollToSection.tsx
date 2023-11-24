@@ -12,7 +12,7 @@ const ScrollToSection = (props: ScrollToSectionProps) => {
 
   const handleScroll = () => {
     const element = document.getElementById(`${sectionID}`)
-    console.log('click')
+
     if (!element) return
 
     element.scrollIntoView({
