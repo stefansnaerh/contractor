@@ -103,6 +103,83 @@ export type AboutCompanyDocument<Lang extends string = string> =
     Lang
   >
 
+type BookAppointmentDocumentDataSlicesSlice = never
+
+/**
+ * Content for Book appointment documents
+ */
+interface BookAppointmentDocumentData {
+  /**
+   * Title field in *Book appointment*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book_appointment.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Slice Zone field in *Book appointment*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book_appointment.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BookAppointmentDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Book appointment*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: book_appointment.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *Book appointment*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book_appointment.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *Book appointment*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: book_appointment.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * Book appointment document from Prismic
+ *
+ * - **API ID**: `book_appointment`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BookAppointmentDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BookAppointmentDocumentData>,
+    'book_appointment',
+    Lang
+  >
+
 /**
  * Item in *Footer → Link group 1*
  */
@@ -835,6 +912,7 @@ export type ServicesDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AboutCompanyDocument
+  | BookAppointmentDocument
   | FooterDocument
   | FrontPageDocument
   | HeaderDocument
@@ -1447,6 +1525,8 @@ declare module '@prismicio/client' {
     export type {
       AboutCompanyDocument,
       AboutCompanyDocumentData,
+      BookAppointmentDocument,
+      BookAppointmentDocumentData,
       FooterDocument,
       FooterDocumentData,
       FrontPageDocument,

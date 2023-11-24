@@ -41,10 +41,10 @@ const PastProjects = ({ slice }: PastProjectsProps): JSX.Element => {
                 className="flex group flex-col justify-around gap-fluid-16 overflow-hidden rounded-12  transition-all duration-300 ease-in-out min-w-[80%] md:min-w-[45%] lg:min-w-[30%] lg:max-w-[30%]"
               >
                 <div className="relative snap-center  overflow-hidden ">
-                  <div className="relative pb-[110%] sm:pb-[78%]  ">
+                  <div className="relative pb-[110%] sm:pb-[78%] overflow-hidden ">
                     <PrismicNextImage
                       field={item.image}
-                      className="object-cover z-0 rounded-12 group-hover:scale-105 transform duration-300 "
+                      className="object-cover z-0 rounded-12 group-hover:scale-105 transform duration-300 overflow-hidden "
                       imgixParams={{ fit: 'crop' }}
                       priority
                       fill
