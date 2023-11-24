@@ -683,6 +683,90 @@ interface ProjectDocumentData {
 export type ProjectDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, 'project', Lang>
 
+type ServiceDocumentDataSlicesSlice = never
+
+/**
+ * Content for service documents
+ */
+interface ServiceDocumentData {
+  /**
+   * Title field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Paragraph field in *service*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.paragraph
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField
+
+  /**
+   * Slice Zone field in *service*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: service.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: service.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * service document from Prismic
+ *
+ * - **API ID**: `service`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<ServiceDocumentData>, 'service', Lang>
+
 type ServicesDocumentDataSlicesSlice = ServiceOwerviewSlice
 
 /**
@@ -756,6 +840,7 @@ export type AllDocumentTypes =
   | HeaderDocument
   | PastProjectsDocument
   | ProjectDocument
+  | ServiceDocument
   | ServicesDocument
 
 /**
@@ -1372,6 +1457,8 @@ declare module '@prismicio/client' {
       PastProjectsDocumentData,
       ProjectDocument,
       ProjectDocumentData,
+      ServiceDocument,
+      ServiceDocumentData,
       ServicesDocument,
       ServicesDocumentData,
       AllDocumentTypes,

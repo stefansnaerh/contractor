@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Apiko() {
+export default async function PastProjects() {
   const client = createClient()
 
   const page = await client.getSingle<PastProjectsDocument>('past_projects')

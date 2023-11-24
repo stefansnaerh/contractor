@@ -23,7 +23,7 @@ export default async function Home() {
   const content = page.data
 
   return (
-    <section className="relative font-poppins">
+    <section className="relative ">
       <div className="relative w-fill  overflow-hidden  ">
         {' '}
         <div className="absolute z-20 w-fill h-fill bg-gradient-to-b from-pureBlack to-backgroundGrey mix-blend-multiply "></div>

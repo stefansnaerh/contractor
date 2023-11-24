@@ -81,7 +81,6 @@ const ServiceOverview = ({ slice }: ServiceOverviewProps): JSX.Element => {
           </FadeIn>
           <FadeIn className="flex   gap-fluid-48 overflow-hidden flex-wrap lg:justify-center">
             {slice.items?.map((item, index) => {
-              console.log(item)
               return (
                 <PrismicNextLink
                   field={item.service_link}

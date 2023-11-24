@@ -57,7 +57,7 @@ module.exports = {
         { lineHeight: '1.38', letterSpacing: '0em' },
       ],
       paragraph: [
-        'clamp(1.6rem, 1.364rem + 0.599vw, 2.4rem)',
+        'clamp(1.6rem, 1.364rem + 0.599vw, 2.2rem)',
         { lineHeight: '1.38', letterSpacing: '0em' },
       ],
       lg: [
