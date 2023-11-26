@@ -58,9 +58,9 @@ export default async function ServicePage({ params }: { params: Params }) {
       <SliceContainer className="flex flex-col gap-fluid-56 lg:flex-row  ">
         <div className="flex flex-col  gap-fluid-40  lg:w-[35%] lg:self-start">
           <FadeIn className="border-b-[3px] pb-4 border-y-orange w-fit self-start">
-            <h1 className="text-h2 font-headline font-semiBold">
+            <h2 className="text-h1 font-headline font-semiBold">
               Heyrðu í okkur!
-            </h1>
+            </h2>
           </FadeIn>
           <FadeIn>
             <p className="text-paragraph font-body">

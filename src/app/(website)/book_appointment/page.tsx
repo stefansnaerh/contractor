@@ -3,7 +3,7 @@ import { createClient } from '../../../../prismicio'
 import { BookAppointmentDocument } from '../../../../prismicio-types'
 import { SliceZone } from '@prismicio/react'
 import { components } from '../../../../slices'
-
+import Form from '../../components/Form/form'
 import { FadeIn } from '../../components/Fade/fade'
 import SliceContainer from '../../components/SliceContainer/sliceContainer'
 
@@ -36,7 +36,40 @@ export default async function Apiko() {
               </h1>
             </FadeIn>
           )}
+          <FadeIn>
+            <ul className="font-regular text-paragraph font-body [&_li]:list-disc [&_li]:marker:text-orange flex flex-col gap-fluid-16">
+              <span className="">
+                Hægt er að hafa samband við okkur með að :
+              </span>
+              <li>
+                Hringja í okkur í síma{' '}
+                <a
+                  className="border-b-2 border-b-footerBlue"
+                  aria-label="Hlekkur til að hringja í okkur"
+                  href="tel:5540822"
+                >
+                  5540822
+                </a>
+              </li>
+              <li>
+                Senda okkur tölvupóst á{' '}
+                <a
+                  className="border-b-2 border-b-footerBlue"
+                  aria-label="Hlekkur til að hringja í okkur"
+                  href="mailto:shverk@shverk.is"
+                >
+                  shverk@shverk.is
+                </a>
+              </li>
+              <li>
+                Fylla út formið hér á síðunni og við höfum samband við fyrsta
+                tækifæri
+              </li>
+            </ul>
+          </FadeIn>
         </div>
+
+        <Form />
       </SliceContainer>
 
       <SliceZone slices={page.data.slices} components={components} />
