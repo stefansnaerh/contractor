@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import { PrismicNextLink } from '@prismicio/next'
 
-import Button from '../../Button/Button'
+import ScrollToSection from '../../ScrollToSection/scrollToSection'
 import cx from 'classnames'
 import { HeaderDocumentData } from '@/prismicio-types'
 
@@ -76,6 +76,7 @@ export default function MobileNav({
           </li>
           <li>
             <PrismicNextLink
+              onClick={() => setShowMobileNav(false)}
               aria-label={`Hlekkur á ${content.second_link_name}`}
               field={content.second_link}
               className=" text-white"
@@ -85,6 +86,7 @@ export default function MobileNav({
           </li>
           <li>
             <PrismicNextLink
+              onClick={() => setShowMobileNav(false)}
               aria-label={`Hlekkur á ${content.third_link_text}`}
               field={content.third_link}
               className=" text-white"
@@ -94,6 +96,7 @@ export default function MobileNav({
           </li>
           <li>
             <PrismicNextLink
+              onClick={() => setShowMobileNav(false)}
               aria-label={`Hlekkur á ${content.fourth_link_text}`}
               field={content.fourth_link}
               className=" text-white"
@@ -102,12 +105,11 @@ export default function MobileNav({
             </PrismicNextLink>
           </li>
         </ul>
-        <Button
-          text={content.button_text}
-          type="anchor"
-          href={content.button_link}
-          ariaLabel={`Hlekkur til að fara með þig á ${content.button_text}`}
-          className="bg-orange  text-white font-medium text-lg hover:bg-brownHover transition-all duration-300 ease-in-out"
+        <ScrollToSection
+          setShowMobileNav={setShowMobileNav}
+          buttonText={content.button_text}
+          ariaLabel={`Hlekkur til að fara á ${content.button_text}`}
+          sectionID="contact"
         />
       </nav>
     </>
