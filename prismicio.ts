@@ -39,10 +39,6 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'project',
     path: '/past_projects/:uid',
   },
-  {
-    type: 'book_appointment',
-    path: '/book_appointment',
-  },
 ]
 
 /**
