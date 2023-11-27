@@ -8,8 +8,9 @@ import { useState, useEffect, useRef } from 'react'
 import cx from 'classnames'
 
 import Logo from '../../icons/SH-verk-logo.svg'
-import Button from '../Button/Button'
+
 import MobileNav from './MobileNav/mobileNav'
+import ScrollToSection from '../ScrollToSection/scrollToSection'
 
 export default function HeaderClient({
   content,
@@ -97,12 +98,10 @@ export default function HeaderClient({
             {content.fourth_link_text}
           </PrismicNextLink>
         </div>
-        <Button
-          text={content.button_text}
-          type="anchor"
+        <ScrollToSection
+          buttonText={content.button_text}
           ariaLabel={`Hlekkur til að fara á ${content.button_text}`}
-          href={content.button_link}
-          className="bg-orange hover:bg-orangeHover text-white  font-medium self-center hover:bg-brownHover transition-all duration-300 ease-in-out"
+          sectionID="contact"
         />
       </nav>
     </header>

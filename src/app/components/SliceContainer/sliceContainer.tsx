@@ -4,6 +4,7 @@ interface SliceContainerProps {
   children: ReactNode
   lessPadding?: boolean
   className?: string
+  id?: string
 }
 
 const SliceContainer = (props: SliceContainerProps) => {

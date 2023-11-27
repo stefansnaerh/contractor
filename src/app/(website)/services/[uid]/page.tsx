@@ -6,7 +6,7 @@ import { components } from '../../../../../slices'
 
 import SliceContainer from '@/src/app/components/SliceContainer/sliceContainer'
 import { FadeIn } from '@/src/app/components/Fade/fade'
-import Form from '@/src/app/components/Form/form'
+
 import RichText from '@/src/app/components/RichText/RichText'
 
 type Params = { uid: string }
@@ -37,7 +37,7 @@ export default async function ServicePage({ params }: { params: Params }) {
   const section = page.data
 
   return (
-    <section className=" mt-[90px] xs:mt-[100px] md:mt-[120px] text-black bg-[#FFFF]">
+    <section className=" mt-[90px] xs:mt-[100px] md:mt-[120px] text-black bg-white">
       <SliceContainer className="relative flex flex-col smmd:flex-row  gap-fluid-40 lg:gap-fluid-122 xl:gap-fluid-144 ">
         <div className="  relative flex flex-col gap-fluid-40 lg:gap-fluid-48 smmd:w-[70%] md:w-[75%] self-start">
           {section.title && (
@@ -55,7 +55,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         </div>
       </SliceContainer>
       <SliceZone slices={page.data.slices} components={components} />
-      <SliceContainer className="flex flex-col gap-fluid-56 lg:flex-row  ">
+      {/* <SliceContainer className="flex flex-col gap-fluid-56 lg:flex-row  ">
         <div className="flex flex-col  gap-fluid-40  lg:w-[35%] lg:self-start">
           <FadeIn className="border-b-[3px] pb-4 border-y-orange w-fit self-start">
             <h2 className="text-h1 font-headline font-semiBold">
@@ -72,8 +72,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             </p>
           </FadeIn>
         </div>
-        <Form />
-      </SliceContainer>
+      </SliceContainer> */}
     </section>
   )
 }

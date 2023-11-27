@@ -3,10 +3,14 @@ import './globals.css'
 
 import { repositoryName } from '../../prismicio'
 
+import Script from 'next/script'
+
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import Contact from './components/Contact/contact'
 
 import { Montserrat, Lato } from '@next/font/google'
+import SliceContainer from './components/SliceContainer/sliceContainer'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -34,6 +38,18 @@ export default function RootLayout({
         <main className="flex flex-col min-h-screen bg-backgroundGrey w-full max-w-screen-xxl mx-auto">
           {children}
         </main>
+        <div id="contact">
+          <SliceContainer className="flex flex-col gap-fluid-48 lg:flex-row">
+            <Contact />
+            <div className="lg:w-[65%]">
+              <div id="ff-compose"></div>
+              <Script
+                id="form"
+                src="https://formfacade.com/include/110808910195665411918/form/1FAIpQLSfRKdf-wyQIzzq362Wo6ZpOmujIDSCBhcc0Gd1fY2UOli8k1w/classic.js?div=ff-compose"
+              ></Script>
+            </div>
+          </SliceContainer>
+        </div>
         <Footer />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
