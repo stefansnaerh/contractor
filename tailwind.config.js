@@ -81,7 +81,7 @@ module.exports = {
         { lineHeight: '1.08', letterSpacing: '-0.02em' },
       ],
       h5: [
-        'clamp(2.8rem, 2.236rem + 1.484vw, 4.8rem)',
+        'clamp(2.4rem, 2.067rem + 0.887vw, 3.6rem)',
         { lineHeight: '1.08', letterSpacing: '-0.02em' },
       ],
     },

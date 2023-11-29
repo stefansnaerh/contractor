@@ -30,10 +30,6 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const page = await client.getByUID<ServiceDocument>('service', params.uid)
 
-  // const allServices = await client.getAllByType<ServiceDocument>('service')
-
-  // const servicesArray = allServices.map((service) => service.data.title)
-
   const section = page.data
 
   return (
@@ -55,24 +51,6 @@ export default async function ServicePage({ params }: { params: Params }) {
         </div>
       </SliceContainer>
       <SliceZone slices={page.data.slices} components={components} />
-      {/* <SliceContainer className="flex flex-col gap-fluid-56 lg:flex-row  ">
-        <div className="flex flex-col  gap-fluid-40  lg:w-[35%] lg:self-start">
-          <FadeIn className="border-b-[3px] pb-4 border-y-orange w-fit self-start">
-            <h2 className="text-h1 font-headline font-semiBold">
-              Heyrðu í okkur!
-            </h2>
-          </FadeIn>
-          <FadeIn>
-            <p className="text-paragraph font-body">
-              Vinsamlegast fyllið út formið og við munum hafa samband við fyrsta
-              tækifæri. Okkur er annt um að svara öllum fyrispurnum fljótt og
-              örugglega. Mikilvægt er að sem mestar upplýsingar komi fram og
-              reyna hafa nákvæma verklýsingu. Myndir af verkinu geta hjálpað
-              mikið til að meta umfang verkefnis.
-            </p>
-          </FadeIn>
-        </div>
-      </SliceContainer> */}
     </section>
   )
 }

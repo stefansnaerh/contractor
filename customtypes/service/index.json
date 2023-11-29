@@ -17,7 +17,7 @@
           "label": "Paragraph",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,heading3,list-item,o-list-item"
+          "multi": "paragraph,heading3,strong,list-item,o-list-item,heading2"
         }
       },
       "slices": {
