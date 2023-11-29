@@ -41,7 +41,7 @@ export default function RootLayout({
         <div id="contact">
           <SliceContainer className="flex flex-col gap-fluid-48 lg:flex-row">
             <Contact />
-            <div className="lg:w-[65%]">
+            <div className="lg:w-[65%] self-start">
               <div id="ff-compose"></div>
               <Script
                 id="form"

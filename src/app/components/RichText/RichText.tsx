@@ -10,8 +10,8 @@ export default function RichText(props: RichTextProps) {
   return (
     <div
       className="w-fill  [&_p]:text-paragraph [&_p]:font-regular [&_p]:font-body [&_p]:pt-fluid-12 
-    [&_h2]:text-h5 [&_h2]:font-headline [&_h2]:font-semiBold  [&_h2]:pt-fluid-40
-    [&_h3]:text-h3 [&_h3]:font-body  [&_h3]:font-medium [&_h3]:pb-2  [&_h3]:pt-fluid-40 [&_h3]:border-b-2 [&_h3]:border-b-orange [&_h3]:w-fit
+    [&_h2]:text-h5 [&_h2]:font-body [&_h2]:font-medium  [&_h2]:pt-fluid-40
+    [&_h3]:text-h3 [&_h3]:font-body  [&_h3]:font-medium [&_h3]:pb-2  [&_h3]:pt-fluid-32 [&_h3]:border-b-2 [&_h3]:border-b-orange [&_h3]:w-fit
     [&_img]:py-fluid-32 [&_img]:max-h-[400px] [&_img]:w-fill [&_img]:rounded-12  [&_img]:object-cover 
     [&_li]:list-disc [&_li]:marker:text-orange [&_li]:text-md [&_li]:before:bg-red [&_li]:py-4 [&_ul]:py-8 [&_ul]:pl-16"
     >
