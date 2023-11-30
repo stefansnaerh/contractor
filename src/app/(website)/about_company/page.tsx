@@ -36,6 +36,7 @@ export default async function Apiko() {
               field={section.image}
               className="object-cover z-0 rounded-12"
               imgixParams={{ fit: 'crop' }}
+              alt={''}
               priority
               fill
               sizes="(max-width: 768px) 100vw"
@@ -67,6 +68,7 @@ export default async function Apiko() {
                 imgixParams={{ fit: 'crop' }}
                 priority
                 fill
+                alt={''}
                 sizes="(max-width: 768px) 100vw"
               />
             </div>

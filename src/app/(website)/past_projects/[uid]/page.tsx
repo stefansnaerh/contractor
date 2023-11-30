@@ -57,6 +57,7 @@ export default async function Education({ params }: { params: Params }) {
                         className="object-cover z-0 rounded-12"
                         imgixParams={{ fit: 'crop' }}
                         fill
+                        alt={''}
                         sizes="(max-width: 768px) 100vw"
                         priority
                       />

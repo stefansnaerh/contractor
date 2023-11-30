@@ -8,8 +8,7 @@ export default function Contact() {
       </FadeIn>
 
       <FadeIn>
-        <ul className="font-regular text-paragraph font-body [&_li]:list-disc [&_li]:marker:text-orange flex flex-col gap-fluid-16">
-          <span className="">Hægt er að hafa samband við okkur með að :</span>
+        <ul className="before:content-['Hægt_er_að_hafa_samband_við_okkur_með_að_:'] font-regular text-paragraph font-body [&_li]:list-disc [&_li]:marker:text-orange flex flex-col gap-fluid-16">
           <li>
             Hringja í okkur í síma{' '}
             <a

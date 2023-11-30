@@ -34,7 +34,8 @@ export default async function Home() {
             imgixParams={{ fit: 'crop' }}
             priority
             fill
-            sizes=""
+            alt={''}
+            sizes="(max-width: 768px) 100vw"
           />
         </div>
         <FadeIn className="absolute flex flex-col gap-fluid-48 max-w-[90%] z-40 m-auto w-fit left-0 right-0 text-center  text-white font-headline  top-[30%] ">

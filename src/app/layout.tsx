@@ -11,6 +11,7 @@ import Contact from './components/Contact/contact'
 
 import { Montserrat, Lato } from '@next/font/google'
 import SliceContainer from './components/SliceContainer/sliceContainer'
+import { useEffect } from 'react'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -42,7 +43,10 @@ export default function RootLayout({
           <SliceContainer className="flex flex-col gap-fluid-48 lg:flex-row">
             <Contact />
             <div className="lg:w-[65%] self-start">
-              <div id="ff-compose"></div>
+              <div
+                id="ff-compose"
+                className="[&_img]:w-fill [&_img]:h-fill  "
+              ></div>
               <Script
                 id="form"
                 src="https://formfacade.com/include/110808910195665411918/form/1FAIpQLSfRKdf-wyQIzzq362Wo6ZpOmujIDSCBhcc0Gd1fY2UOli8k1w/classic.js?div=ff-compose"

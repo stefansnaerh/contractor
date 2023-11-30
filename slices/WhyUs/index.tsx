@@ -37,6 +37,7 @@ const WhyUs = ({ slice }: WhyUsProps): JSX.Element => {
                     imgixParams={{ fit: 'crop' }}
                     priority
                     fill
+                    alt={''}
                     sizes="(max-width: 768px) 100vw"
                   />
                 </div>
