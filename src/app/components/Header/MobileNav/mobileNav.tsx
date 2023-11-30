@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { PrismicNextLink } from '@prismicio/next'
 
@@ -21,6 +21,24 @@ export default function MobileNav({
     setShowMobileNav((prevShowMobileNav) => !prevShowMobileNav)
     setIsMobileNavOpen((prevShowMobileNav) => !prevShowMobileNav)
   }
+
+  useEffect(() => {
+    const submitImage = document.getElementById('ff-compose')
+
+    const images = submitImage?.querySelectorAll('img')
+    console.log(images)
+    if (!images) return
+    // images[0].alt = 'elkfjds'
+    // images[1].alt = '11212'
+
+    // //loop through all images
+    // for (let i = 0; i < images.length; i++) {
+    //     //add alt text if missing (but title is present)
+    //     if (images[i].title && !images[i].alt) {
+    //         images[i].alt = images[i].title;
+    //     }
+    // }
+  }, [])
 
   return (
     <>
