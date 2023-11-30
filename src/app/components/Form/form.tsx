@@ -13,13 +13,7 @@ export default function Form() {
         height="1"
         title="Fá tilboð"
       ></iframe>
-      <Script
-        id="tally-js"
-        src="https://tally.so/widgets/embed.js"
-        onLoad={() => {
-          Tally.loadEmbeds()
-        }}
-      />
+      <Script id="tally-js" src="https://tally.so/widgets/embed.js" />
     </>
   )
 }
