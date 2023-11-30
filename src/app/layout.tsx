@@ -3,8 +3,6 @@ import './globals.css'
 
 import { repositoryName } from '../../prismicio'
 
-import Script from 'next/script'
-
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Contact from './components/Contact/contact'
