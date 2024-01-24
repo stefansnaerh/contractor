@@ -61,6 +61,7 @@ export default async function Footer() {
           >
             <li>
               <a
+                className="h-48"
                 href={`https://maps.google.com/maps?q=${content.company_address}`}
                 aria-label={`Opnar leiðbeiningar til ${content.company_address} í google maps`}
               >
@@ -71,6 +72,7 @@ export default async function Footer() {
             <li>{content.company_ssd_number}</li>
             <li>
               <a
+                className="h-48"
                 href={`mailto:${content.company_email}`}
                 aria-label={`Opnar tölvupóst til ${content.company_email} í nýjum glugga`}
                 target="_blank"
@@ -80,6 +82,7 @@ export default async function Footer() {
             </li>
             <li>
               <a
+                className="h-48"
                 href={`tel:${content.company_phone_number}`}
                 aria-label={`Hringja í síma ${content.company_phone_number}`}
               >
