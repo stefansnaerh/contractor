@@ -6,7 +6,7 @@ import { repositoryName } from '../../prismicio'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Contact from './components/Contact/contact'
-import Form from './components/Form/form'
+// import Form from './components/Form/form'
 
 import { Montserrat, Lato } from '@next/font/google'
 import SliceContainer from './components/SliceContainer/sliceContainer'
@@ -50,7 +50,7 @@ export default function RootLayout({
                 src="https://formfacade.com/include/110808910195665411918/form/1FAIpQLSfRKdf-wyQIzzq362Wo6ZpOmujIDSCBhcc0Gd1fY2UOli8k1w/classic.js?div=ff-compose"
               ></Script>
             </div> */}
-            <Form />
+            {/* <Form /> */}
           </SliceContainer>
         </div>
         <Footer />
