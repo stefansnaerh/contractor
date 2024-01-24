@@ -59,9 +59,8 @@ export default async function Footer() {
             aria-label={`Heimilisfang og fleira`}
             className="flex gap-8 md:min-h-[160px] w-[130px] md:w-fit flex-col font-medium "
           >
-            <li>
+            <li className="">
               <a
-                className="h-48"
                 href={`https://maps.google.com/maps?q=${content.company_address}`}
                 aria-label={`Opnar leiðbeiningar til ${content.company_address} í google maps`}
               >
@@ -72,7 +71,7 @@ export default async function Footer() {
             <li>{content.company_ssd_number}</li>
             <li>
               <a
-                className="h-48"
+                className=""
                 href={`mailto:${content.company_email}`}
                 aria-label={`Opnar tölvupóst til ${content.company_email} í nýjum glugga`}
                 target="_blank"
