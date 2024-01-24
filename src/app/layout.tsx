@@ -55,7 +55,6 @@ export default function RootLayout({
         </div>
         <Footer />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   )
 }
