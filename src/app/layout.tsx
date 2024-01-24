@@ -1,7 +1,6 @@
-import { PrismicPreview } from '@prismicio/next'
 import './globals.css'
-
-import { repositoryName } from '../../prismicio'
+// import { PrismicPreview } from '@prismicio/next'
+// import { repositoryName } from '../../prismicio'
 
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -55,6 +54,7 @@ export default function RootLayout({
         </div>
         <Footer />
       </body>
+      {/* <PrismicPreview repositoryName={repositoryName} /> */}
     </html>
   )
 }
