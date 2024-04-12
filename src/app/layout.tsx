@@ -5,8 +5,7 @@ import './globals.css'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Contact from './components/Contact/contact'
-import { PrismicPreview } from '@prismicio/next'
-import { repositoryName } from '@/prismicio'
+
 // import Form from './components/Form/form'
 
 import { Montserrat, Lato } from '@next/font/google'
@@ -56,7 +55,6 @@ export default function RootLayout({
         </div>
         <Footer />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   )
 }
